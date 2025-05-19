@@ -19,5 +19,9 @@ run: all
 	clear
 	@./$(TARGET)
 
+debug: all
+	clear
+	@strace ./$(TARGET)
+
 clean:
 	rm -rf build/*.o $(TARGET)
