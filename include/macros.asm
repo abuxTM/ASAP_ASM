@@ -17,6 +17,10 @@
 
 ; FIX: This aint no working
 
+; ---------------------------------------------------
+; Arguments:
+;   %1 - times to loop
+; ---------------------------------------------------
 %macro loop_start 1
   mov rcx, %1
   push rcx

@@ -25,6 +25,7 @@
 ; JS      | INS | Jump if sign flag (SF) is set
 ; RIP     | REG | Points to the next INS
 ; RFLAGS  | REG | CPU status (overflow, zero, etc)
+; --------------------------
 
 ; global mutable data
 section .data
@@ -32,7 +33,10 @@ section .data
   msg_len equ $ - msg
   filename db "output.txt", 0
 
-; make _start runnable
+section .bss
+  dynamic_buffer resb 1024 ; TODO: Use it for something
+
+; make shit runnable
 section .text
   global _start
 
@@ -43,9 +47,7 @@ _start:
   file_close
 
   ; ----------
-  loop_start  3
-  print       msg, msg_len
-  loop_end
+  print msg, msg_len
 
   ; ----------
   end_program
