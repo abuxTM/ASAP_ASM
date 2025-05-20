@@ -48,4 +48,4 @@ _start:
   loop_end
 
   ; ----------
-  call  end_program
+  end_program
